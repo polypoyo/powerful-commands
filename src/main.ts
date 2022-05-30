@@ -21,13 +21,8 @@ export const bot = new Client({
 
 	// Debug logs are disabled in silent mode
 	silent: false,
-
-	// Configuration for @SimpleCommand
-	simpleCommand: {
-		prefix: "!",
-	},
 });
-
+let savedMsgs: Object | any = {};
 bot.once("ready", async () => {
 	// Make sure all guilds are cached
 	await bot.guilds.fetch();
@@ -54,7 +49,9 @@ bot.on("interactionCreate", (interaction: Interaction) => {
 });
 
 bot.on("messageCreate", (message: Message) => {
-	bot.executeCommand(message);
+	if (message.author.id !== bot.user?.id) {
+		console.log((savedMsgs[message.id] = message));
+	}
 });
 
 async function run() {
