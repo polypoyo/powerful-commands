@@ -51,7 +51,7 @@ export class WebHookCommand {
 		});
 		const reply = interaction.reply({ content: "Sent!", flags: 0b01000000 });
 		await sleep(1_500);
-		interaction.deleteReply();
+		// interaction.deleteReply();
 	}
 	@Slash("list", { description: "Lists webhooks in the current channel" })
 	@SlashGroup(group)
