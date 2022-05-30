@@ -40,7 +40,7 @@ bot.once("ready", async () => {
 	//  await bot.clearApplicationCommands(
 	//    ...bot.guilds.cache.map((g) => g.id)
 	//  );
-
+	console.clear();
 	console.log("Bot started");
 });
 
