@@ -19,7 +19,7 @@ export class Example {
 
 		const helloBtn = new MessageButton()
 			.setLabel("Hello")
-			.setEmoji("👋")
+			.setEmoji("\u{1F44B}")
 			.setStyle("PRIMARY")
 			.setCustomId("hello-btn");
 
@@ -33,6 +33,6 @@ export class Example {
 
 	@ButtonComponent("hello-btn")
 	helloBtn(interaction: ButtonInteraction): void {
-		interaction.reply(`👋 ${interaction.member}`);
+		interaction.reply(`\u{1F44B} ${interaction.member}`);
 	}
 }
