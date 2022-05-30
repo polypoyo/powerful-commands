@@ -48,11 +48,7 @@ bot.on("interactionCreate", (interaction: Interaction) => {
 	bot.executeInteraction(interaction);
 });
 
-bot.on("messageCreate", (message: Message) => {
-	if (message.author.id !== bot.user?.id) {
-		console.log((savedMsgs[message.id] = message));
-	}
-});
+bot.on("messageCreate", (message: Message) => {});
 
 async function run() {
 	// The following syntax should be used in the commonjs environment
