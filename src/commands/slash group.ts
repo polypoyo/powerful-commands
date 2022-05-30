@@ -1,12 +1,14 @@
 import type { CommandInteraction } from "discord.js";
 import { Discord, Slash, SlashGroup, SlashOption } from "discordx";
 
+const group = "example-testing";
+const subgroup = "maths";
 @Discord()
-@SlashGroup({ name: "testing" })
-@SlashGroup({ name: "maths", root: "testing" })
+@SlashGroup({ name: group })
+@SlashGroup({ name: subgroup, root: group })
 export class Group {
 	@Slash("add")
-	@SlashGroup("maths", "testing")
+	@SlashGroup(subgroup, group)
 	add(
 		@SlashOption("x", { description: "x value" }) x: number,
 		@SlashOption("y", { description: "y value" }) y: number,
@@ -16,7 +18,7 @@ export class Group {
 	}
 
 	@Slash("multiply")
-	@SlashGroup("maths", "testing")
+	@SlashGroup(subgroup, group)
 	multiply(
 		@SlashOption("x", { description: "x value" }) x: number,
 		@SlashOption("y", { description: "y value" }) y: number,
@@ -26,7 +28,7 @@ export class Group {
 	}
 
 	@Slash("root")
-	@SlashGroup("testing")
+	@SlashGroup(group)
 	root(
 		@SlashOption("text") text: string,
 		interaction: CommandInteraction

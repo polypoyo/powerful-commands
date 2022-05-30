@@ -9,7 +9,7 @@ import { ButtonComponent, Discord, Slash, SlashOption } from "discordx";
 
 @Discord()
 export class Example {
-	@Slash("hello-btn")
+	@Slash("example-hello-btn")
 	async hello(
 		@SlashOption("user", { type: "USER" })
 		user: User | GuildMember | undefined,

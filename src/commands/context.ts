@@ -3,12 +3,12 @@ import { ContextMenu, Discord } from "discordx";
 
 @Discord()
 export class Example {
-	@ContextMenu("MESSAGE", "message context")
+	@ContextMenu("MESSAGE", "example/message context")
 	messageHandler(interaction: ContextMenuInteraction): void {
 		interaction.reply("I am user context handler");
 	}
 
-	@ContextMenu("USER", "user context")
+	@ContextMenu("USER", "example/user context")
 	userHandler(interaction: ContextMenuInteraction): void {
 		interaction.reply("I am user context handler");
 	}

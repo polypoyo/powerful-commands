@@ -3,7 +3,7 @@ import { Discord, Slash, SlashChoice, SlashOption } from "discordx";
 
 @Discord()
 export class Example {
-	@Slash("choose")
+	@Slash("example-choose")
 	choose(
 		@SlashChoice("Human", "Astronaut", "Dev")
 		@SlashOption("what", { description: "What are you?" })
@@ -13,7 +13,7 @@ export class Example {
 		interaction.reply(what);
 	}
 
-	@Slash("choice")
+	@Slash("example-choice")
 	choice(
 		@SlashChoice({ name: "are you okay?", value: "okay" })
 		@SlashChoice({ name: "are you good?", value: "good" })
