@@ -6,10 +6,10 @@ import {
 } from "discord.js";
 import { Discord, Slash, SlashGroup, SlashOption } from "discordx";
 //@ts-expect-erro
-import { logPromise } from "../api/logPromise.js";
+import { logPromise } from "../common/logPromise.js";
 const group = "webhook";
 import dotenv from "dotenv";
-import { sleep } from "../api/sleep.js";
+import { sleep } from "../common/sleep.js";
 dotenv.config();
 @Discord()
 @SlashGroup({ name: group, description: "Manage webhooks" })
